@@ -1,0 +1,36 @@
+{
+  "name": "bayfrontmedia/translation",
+  "description": "A PHP translation library utilizing multiple language storage options.",
+  "homepage": "https://github.com/bayfrontmedia/translation",
+  "license" : "MIT",
+  "version": "1.0.0",
+  "type": "library",
+  "keywords": [
+    "php",
+    "translation",
+    "translate"
+  ],
+  "authors": [
+    {
+      "name": "John Robinson",
+      "email": "john@bayfrontmedia.com",
+      "homepage": "https://www.bayfrontmedia.com",
+      "role": "Developer"
+    }
+  ],
+  "funding": [
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/bayfrontmedia"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "bayfrontmedia/php-array-helpers": "^1.0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bayfront\\Translation\\": "src/"
+    }
+  }
+}
