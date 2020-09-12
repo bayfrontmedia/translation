@@ -62,7 +62,8 @@ class Translate
     /**
      * Return array of all known translations.
      *
-     * Translations are only "known" once their ID has been used.
+     * Translations are only "known" once their ID has been used,
+     * or they have been added via the addTranslations method.
      *
      * @return array
      */
@@ -176,7 +177,7 @@ class Translate
     }
 
     /**
-     * Replace multiple case-sensitive values with a single replacement.
+     * Replace multiple case-sensitive values in a string with a single replacement.
      *
      * @param string $string (Original string)
      * @param array $values (Array of values to replace)

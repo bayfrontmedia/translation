@@ -52,9 +52,7 @@ $adapter = new DefinedArray([
 
 **Local**
 
-The local adapter allows you to store languages locally using native PHP.
-
-PHP files should return an array.
+The local adapter allows you to use local native PHP files containing all of your translation arrays.
 
 ```
 use Bayfront\Translation\Adapters\Local;
@@ -70,7 +68,7 @@ The file structure from the root path should be:
         /id.php
 ```
 
-For example, if the locale is set as `en`, the method `say(dashboard.greeting)` will search for the file `/root_path/en/dashboard.php`, and the array key `greeting`.
+For example, if the locale is set as `en`, the method `say('dashboard.greeting')` will search for the file `/root_path/en/dashboard.php`, and the array key `greeting`.
 
 Example `dashboard.php`:
 
@@ -85,7 +83,7 @@ return [
 
 **PDO**
 
-The PDO adapter allows you to use a `\PDO` instance for language storage into a database, and may throw a `Bayfront\Translation\AdapterException` exception in its constructor.
+The PDO adapter allows you to use a `\PDO` instance for language retrieval from a database, and may throw a `Bayfront\Translation\AdapterException` exception in its constructor.
 
 To create a compatible table, execute the following statement:
 
@@ -188,7 +186,7 @@ $translate->setLocale('es');
 
 Return array of all known translations.
 
-Translations are only "known" once their ID has been used.
+Translations are only "known" once their ID has been used, or they have been added via the [addTranslations](#addtranslations) method.
 
 **Parameters:**
 
@@ -331,7 +329,7 @@ echo $translate->replace($title, [
 
 **Description:**
 
-Replace multiple case-sensitive values with a single replacement.
+Replace multiple case-sensitive values in a string with a single replacement.
 
 **Parameters:**
 
