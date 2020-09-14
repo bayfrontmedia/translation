@@ -28,6 +28,9 @@ composer require bayfrontmedia/translation
 
 ## Usage
 
+**NOTE:** It is up to you to populate the translation data, no matter where it is stored.
+This library simply reads the existing data from its source.
+
 ### Storage adapter
 
 A `Bayfront\Translation\ApadpterInterface` must be passed to the `Bayfront\Translation\Translate` constructor.
@@ -208,7 +211,7 @@ $translations = $translate->getTranslations();
 
 **Description:**
 
-Add translations to the known translations.
+Add translations to the known translations for the current request only.
 
 **Parameters:**
 
