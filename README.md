@@ -144,7 +144,7 @@ Get locale.
 
 **Parameters:**
 
-- (None)
+- None
 
 **Returns:**
 
@@ -190,7 +190,7 @@ Translations are only "known" once their ID has been used, or they have been add
 
 **Parameters:**
 
-- (None)
+- None
 
 **Returns:**
 
