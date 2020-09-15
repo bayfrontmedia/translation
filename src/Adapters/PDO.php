@@ -51,7 +51,6 @@ class PDO implements AdapterInterface
         $this->table = $table;
     }
 
-
     /**
      * @param string $locale
      * @param string $id

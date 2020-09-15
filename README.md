@@ -19,6 +19,8 @@ John Robinson, [Bayfront Media](https://www.bayfrontmedia.com)
 ## Requirements
 
 * PHP >= 7.1.0
+* JSON PHP extension
+* PDO PHP extension
 
 ## Installation
 

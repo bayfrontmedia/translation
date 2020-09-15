@@ -3,7 +3,7 @@
   "description": "A PHP translation library utilizing multiple language storage options.",
   "homepage": "https://github.com/bayfrontmedia/translation",
   "license" : "MIT",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "library",
   "keywords": [
     "php",
@@ -26,7 +26,9 @@
   ],
   "require": {
     "php": ">=7.1.0",
-    "bayfrontmedia/php-array-helpers": "^1.0.1"
+    "bayfrontmedia/php-array-helpers": "^1.0.1",
+    "ext-pdo": "*",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {
