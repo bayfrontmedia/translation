@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
+## [1.0.3] - 2020.09.15
+
+### Changed
+
+- Updated default PDO adapter table name from "languages" to "translations".
+
 ## [1.0.2] - 2020.09.14
 
 ### Fixed
