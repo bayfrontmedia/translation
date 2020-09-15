@@ -29,7 +29,7 @@ class PDO implements AdapterInterface
      * @throws AdapterException
      */
 
-    public function __construct(\PDO $pdo, string $table = 'languages')
+    public function __construct(\PDO $pdo, string $table = 'translations')
     {
 
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION); // Throw exceptions

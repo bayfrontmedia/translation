@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS table_name (
 This table structure ensures only one row exists with a matching `locale` and `id`.
 The `contents` column should contain a JSON encoded array.
 
-The PDO adapter will create/use a table named "languages" unless otherwise specified in the constructor.
+The PDO adapter will create/use a table named "translations" unless otherwise specified in the constructor.
 
 ```
 use Bayfront\Translation\Adapters\PDO;
