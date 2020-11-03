@@ -255,7 +255,7 @@ Return the translation for a given string.
 The string format is: `id.key`. 
 Keys are in array dot notation, so they can be as deeply nested as needed.
 
-Replacement variables should be surrounded in `{{ }}` in the language value.
+Replacement variables should be surrounded by `{{ }}` in the original string.
 
 If a translation is not found and `$default = NULL`, either the original string is returned, or a `TranslationException` is thrown, depending on the setting chosen in the constructor.
 
@@ -297,7 +297,7 @@ Echos the translation for a given string.
 
 - `$string` (string)
 - `$replacements = []` (array)
-- `$default = NULL` (mixed): Default string to return if translation is not found
+- `$default = NULL` (mixed): Default value to return if translation is not found
 
 **Returns:**
 
