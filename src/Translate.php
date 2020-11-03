@@ -18,12 +18,16 @@ class Translate
 
     protected $locale;
 
-    public function __construct(AdapterInterface $storage, string $locale)
+    protected $return_original;
+
+    public function __construct(AdapterInterface $storage, string $locale, bool $return_original = true)
     {
 
         $this->storage = $storage;
 
         $this->locale = $locale;
+
+        $this->return_original = $return_original;
 
     }
 
@@ -102,6 +106,8 @@ class Translate
      * @param mixed $default (Default value to return if translation is not found)
      *
      * @return mixed
+     *
+     * @throws TranslationException
      */
 
     public function get(string $string, array $replacements = [], $default = NULL)
@@ -122,7 +128,15 @@ class Translate
         $translation = Arr::get($this->getTranslations()[$this->locale], $string, $default);
 
         if (NULL === $translation) { // If a translation does not exist and $default = NULL
-            return $string; // Return the original string
+
+            if (true === $this->return_original) {
+
+                return $string; // Return the original string
+
+            }
+
+            throw new TranslationException('Translation not found for locale (' . $this->locale . '): ' . $string);
+
         }
 
         if (is_string($translation)) {
@@ -147,6 +161,8 @@ class Translate
      * @param mixed $default
      *
      * @return void
+     *
+     * @throws TranslationException
      */
 
     public function say(string $string, array $replacements = [], $default = NULL): void

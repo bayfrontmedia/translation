@@ -122,10 +122,14 @@ try {
 Once your adapter has been created, it can be used with Translation. 
 In addition, a string defining the locale should be passed to the constructor.
 
+The last argument is `true` by default. 
+When `true`, if a translation is not found and `$default = NULL`, the original string is returned. 
+If `false`, a `Bayfront\Translation\TranslationException` is thrown.
+
 ```
 use Bayfront\Translation\Translate;
 
-$translate = new Translate($adapter, 'en');
+$translate = new Translate($adapter, 'en', true);
 ```
 
 ### Public methods
@@ -253,7 +257,7 @@ Keys are in array dot notation, so they can be as deeply nested as needed.
 
 Replacement variables should be surrounded in `{{ }}` in the language value.
 
-If a translation is not found and `$default = NULL`, the original string is returned.
+If a translation is not found and `$default = NULL`, either the original string is returned, or a `TranslationException` is thrown, depending on the setting chosen in the constructor.
 
 **Parameters:**
 
@@ -264,6 +268,10 @@ If a translation is not found and `$default = NULL`, the original string is retu
 **Returns:**
 
 - (mixed)
+
+**Throws:**
+
+- `Bayfront\Translation\TranslationException`
 
 **Example:**
 
@@ -294,6 +302,10 @@ Echos the translation for a given string.
 **Returns:**
 
 - (void)
+
+**Throws:**
+
+- `Bayfront\Translation\TranslationException`
 
 **Example:**
 

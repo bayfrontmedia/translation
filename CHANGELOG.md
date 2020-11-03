@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities
 
+## [1.1.0] - 2020.11.03
+
+### Added
+
+- Added ability for translations to throw a `TranslationException` if not existing.
+
 ## [1.0.3] - 2020.09.15
 
 ### Changed
