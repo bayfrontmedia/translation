@@ -3,7 +3,6 @@
   "description": "A PHP translation library utilizing multiple language storage options.",
   "homepage": "https://github.com/bayfrontmedia/translation",
   "license" : "MIT",
-  "version": "1.1.0",
   "type": "library",
   "keywords": [
     "php",
