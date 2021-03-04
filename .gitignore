@@ -8,6 +8,7 @@ _local/*
 
 node_modules/
 /vendor/
+composer.lock
 
 # IDE's
 
