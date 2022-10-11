@@ -24,10 +24,16 @@ class Local implements AdapterInterface
     public function read(string $locale, string $id): array
     {
 
-        $read = require($this->root . '/' . $locale . '/' . $id . '.php');
+        $file = $this->root . '/' . $locale . '/' . $id . '.php';
 
-        if (is_array($read)) {
-            return $read;
+        if (file_exists($file)) {
+
+            $read = require($file);
+
+            if (is_array($read)) {
+                return $read;
+            }
+
         }
 
         return [];

@@ -119,7 +119,7 @@ class Translate
             return $default;
         }
 
-        if (!isset($this->translations[$this->locale][$exp[0]])) { // If this ID has not yet been read
+        if (!isset($this->getTranslations()[$exp[0]])) { // If this ID has not yet been read
 
             $this->translations[$this->locale][$exp[0]] = $this->storage->read($this->locale, $exp[0]);
 
@@ -202,7 +202,7 @@ class Translate
      * @return string
      */
 
-    public function replaceAll(string $string, array $values, string $replacement)
+    public function replaceAll(string $string, array $values, string $replacement): string
     {
         return str_replace($values, $replacement, $string);
     }
