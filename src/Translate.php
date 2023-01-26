@@ -1,12 +1,5 @@
 <?php
 
-/**
- * @package translation
- * @link https://github.com/bayfrontmedia/translation
- * @author John Robinson <john@bayfrontmedia.com>
- * @copyright 2020 Bayfront Media
- */
-
 namespace Bayfront\Translation;
 
 use Bayfront\ArrayHelpers\Arr;
@@ -14,11 +7,11 @@ use Bayfront\ArrayHelpers\Arr;
 class Translate
 {
 
-    protected $storage;
+    protected AdapterInterface $storage;
 
-    protected $locale;
+    protected string $locale;
 
-    protected $return_original;
+    protected bool $return_original;
 
     public function __construct(AdapterInterface $storage, string $locale, bool $return_original = true)
     {
@@ -31,9 +24,9 @@ class Translate
 
     }
 
-    protected $translations = [];
+    protected array $translations = [];
 
-    protected $added_translations = [];
+    protected array $added_translations = [];
 
     /**
      * Get locale.
@@ -103,14 +96,14 @@ class Translate
      *
      * @param string $string
      * @param array $replacements
-     * @param mixed $default (Default value to return if translation is not found)
+     * @param mixed|null $default (Default value to return if translation is not found)
      *
      * @return mixed
      *
      * @throws TranslationException
      */
 
-    public function get(string $string, array $replacements = [], $default = NULL)
+    public function get(string $string, array $replacements = [], mixed $default = NULL): mixed
     {
 
         $exp = explode('.', $string, 2); // $exp[0] = ID / $exp[1] = array key in dot notation
@@ -158,14 +151,14 @@ class Translate
      *
      * @param string $string
      * @param array $replacements
-     * @param mixed $default
+     * @param mixed|null $default
      *
      * @return void
      *
      * @throws TranslationException
      */
 
-    public function say(string $string, array $replacements = [], $default = NULL): void
+    public function say(string $string, array $replacements = [], mixed $default = NULL): void
     {
         echo $this->get($string, $replacements, $default);
     }

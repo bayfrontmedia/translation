@@ -1,12 +1,5 @@
 <?php
 
-/**
- * @package translation
- * @link https://github.com/bayfrontmedia/translation
- * @author John Robinson <john@bayfrontmedia.com>
- * @copyright 2020 Bayfront Media
- */
-
 namespace Bayfront\Translation\Adapters;
 
 use Bayfront\Translation\AdapterException;
@@ -16,9 +9,9 @@ use PDOException;
 class PDO implements AdapterInterface
 {
 
-    protected $pdo;
+    protected \PDO $pdo;
 
-    protected $table;
+    protected string $table;
 
     /**
      * PDO constructor.
@@ -84,7 +77,7 @@ class PDO implements AdapterInterface
 
             return $result;
 
-        } catch (PDOException $e) {
+        } catch (PDOException) {
 
             /*
              * Exceptions are returned as an empty array, so no error will bubble up

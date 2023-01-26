@@ -1,12 +1,5 @@
 <?php
 
-/**
- * @package translation
- * @link https://github.com/bayfrontmedia/translation
- * @author John Robinson <john@bayfrontmedia.com>
- * @copyright 2020 Bayfront Media
- */
-
 namespace Bayfront\Translation\Adapters;
 
 use Bayfront\Translation\AdapterInterface;
@@ -14,7 +7,7 @@ use Bayfront\Translation\AdapterInterface;
 class Local implements AdapterInterface
 {
 
-    protected $root;
+    protected string $root;
 
     public function __construct(string $root = '')
     {
